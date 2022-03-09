@@ -1,0 +1,2 @@
+# Sigma Blog
+This will be my slightly-different version of the Alpha Blog presented in the [Complete Ruby on Rails Developer Course](https://www.udemy.com/course/the-complete-ruby-on-rails-developer-course/) from Mashrur Hossain and Rob Percival Udemy.
