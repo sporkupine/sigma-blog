@@ -32,8 +32,8 @@
             Dropdown
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><%= link_to 'Articles', articles_path, class: "dropdown-item" %></li>
+            <li><%= link_to 'Create New Article', new_article_path, class: "dropdown-item" %></li>
             <li><hr class="dropdown-divider" /></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
