@@ -6,9 +6,7 @@ $homeImagePath: "pen-background.png";
   padding: 5% 2%;
   background-size: 100% 100%;
   background-image: url($homeImagePath);
-  // height: 100%;
-  // width: 100%;
-  overflow: hidden;
+  background-size: cover; 
 }
 .home-header {
   color: white;
