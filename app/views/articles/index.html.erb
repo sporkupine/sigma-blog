@@ -1,33 +1,27 @@
-<h1>Articles Index</h1>
+<h1 class="my-4 mx-5">All Articles</h1>
 
-<table>
-  <thead>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th colspan="3">Actions</th>
-  </tr>
-  </thead>
+<div class="container">
+<% @articles.each do |article| %>
+  <div class="row">
+  <div class="col-8">
+    <div class="card mb-2 shadow rounded" style="background-color: rgb( 251, 251, 215 )">
+      <h5 class="card-title ms-5 mb-4 mt-1">
+        <strong><%= article.title %></strong>
+      </h5>
+      <h6 class="card-subtitle ms-4 mb-2 text-muted">
+        <%= article.created_at %>
+      </h6>
+      <p class="card-text ms-4">
+        <%= article.description %>
+      </p>
+      <span class="ms-5 mb-2">
+        <%= link_to 'View', article_path(article) %> | 
+        <%= link_to 'Edit', edit_article_path(article) %> | 
+        <%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %>
+      </span>
 
-  <tbody>
-  <% @articles.each do |article| %>
-     <tr>
-      <td><%= article.title %></td>
-      <td><%= article.description %></td>
-      <td> <%= link_to "View", article_path(article) %></td>
-      <td><%= link_to "Edit", edit_article_path(article) %></td>
-      <td><%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-
-  <% end %>
-
-  </tbody>
-</table>
-
-<p>
-  <%= link_to 'Create new article', new_article_path  %>
-</p>
-<p>
-  <%= link_to 'Home', root_path %> | 
-  <%= link_to 'About', about_path %>
-</p>
+    </div>
+  </div>
+  </div>
+<% end %>
+</div>
