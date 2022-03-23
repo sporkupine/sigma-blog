@@ -10,15 +10,15 @@
       </h5>
       <h6 class="card-title ms-4 mb-2">Author will go HERE</h6>
       <h6 class="card-subtitle ms-4 mb-2 text-muted">
-        <%= article.created_at %>
+        <%= time_ago_in_words(article.created_at) %> ago
       </h6>
       <p class="card-text ms-4">
         <%= truncate(article.description, length: 100) %>
       </p>
       <span class="ms-4 mb-2">
-        <%= link_to 'View', article_path(article) %> | 
-        <%= link_to 'Edit', edit_article_path(article) %> | 
-        <%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'View', article_path(article), class: "btn btn-outline-primary" %>
+        <%= link_to 'Edit', edit_article_path(article), class: "btn btn-outline-info" %>
+        <%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %>
       </span>
 
     </div>
