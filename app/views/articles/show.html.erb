@@ -1,7 +1,24 @@
-<h1>Article </h1>
-<h3>Title: <%= @article.title %></h3>
-<p><strong>Description: </strong><%= @article.description %></p>
+<div class="container">
+  <div class="row">
+  <div class="col-8">
+    <div class="card mb-2 shadow rounded" style="background-color: rgb( 251, 251, 215 )">
+      <h2 class="card-header mb-2 mt-1">
+        <strong><%= @article.title %></strong>
+      </h2>
+      <h5 class="card-title ms-4 mb-2">Author will go HERE</h5>
+      <h6 class="card-subtitle ms-4 mb-2 text-muted">
+        <%= time_ago_in_words(@article.created_at) %> ago
+      </h6>
+      <p class="card-text ms-4">
+        <%= simple_format(@article.description, class: "ms-4") %>
+      </p>
+      <span class="ms-4 mb-2">
+        <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-outline-info" %>
+        <%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %>
+      </span>
 
-<%= link_to 'Edit', edit_article_path %> | 
-<%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: 'Are you sure?' } %> | 
-<%= link_to 'Return to index', articles_path %>
+    </div>
+    <%= link_to "Return to Index", articles_path %>
+  </div>
+  </div>
+</div>  
