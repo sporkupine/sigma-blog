@@ -6,7 +6,9 @@
         <strong><%= article.title %></strong>
       </h5>
       <h6 class="card-title ms-4 mb-2">
-        by <%= article.user.username if article.user %>
+        <% if article.user %>
+          by <%= link_to article.user.username, user_path(article.user) %>
+        <% end %>
       </h6>
       <h6 class="card-subtitle ms-4 mb-2 text-muted">
         <%= time_ago_in_words(article.created_at) %> ago

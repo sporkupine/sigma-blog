@@ -6,7 +6,15 @@
         <strong><%= @article.title %></strong>
       </h2>
       <h5 class="card-title ms-4 mb-2">
-      by <%= @article.user.username if @article.user %>
+        <% if @article.user %>
+          <p class="card-text">
+            by <%= link_to @article.user.username, user_path(@article.user) %>
+          </p>
+          <div class="author-thumbnail">
+            <%= gravatar_for(@article.user, size: 40) %>
+          </div>
+       
+        <% end %>
       </h5>
       <h6 class="card-subtitle ms-4 mb-2 text-muted">
         <%= time_ago_in_words(@article.created_at) %> ago
