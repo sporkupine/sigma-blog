@@ -5,5 +5,11 @@
 </div>
 <h3 class="mt-4 text-center"><%= @user.username %>'s Articles</h3>
 <div class="container">
+  <div class="flickr_pagination">
+    <%= will_paginate @articles, :container => false %>
+  </div>
   <%= render 'articles/article' %>
+    <div class="flickr_pagination mb-2">
+    <%= will_paginate @articles, :container => false %>
+  </div>
 </div>
