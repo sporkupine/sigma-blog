@@ -23,7 +23,9 @@
           </p>
           <span class="mb-2 text-center">
             <%= link_to 'View Profile', user, class: "btn btn-outline-primary" %>
-            <%= link_to 'Edit', edit_user_path(user), class: "btn btn-outline-info" %>
+            <% if logged_in? && user == current_user %>
+              <%= link_to 'Edit', edit_user_path(user), class: "btn btn-outline-info" %>
+            <% end %>
           </span>
         </div>
       </div>
