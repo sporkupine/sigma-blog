@@ -1,5 +1,14 @@
 <h1 class="my-4 mx-5">All Articles</h1>
 
 <div class="container">
-<%= render 'article' %>
+
+  <div class="flickr_pagination">
+    <%= will_paginate @articles, :container => false %>
+  </div>
+
+  <%= render 'article' %>
+
+  <div class="flickr_pagination">
+    <%= will_paginate @articles, :container => false %>
+  </div>
 </div>

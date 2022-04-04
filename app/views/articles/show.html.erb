@@ -11,9 +11,8 @@
             by <%= link_to @article.user.username, user_path(@article.user) %>
           </p>
           <div class="author-thumbnail">
-            <%= gravatar_for(@article.user, size: 40) %>
+            <%= gravatar_for(@article.user, size: 50) %>
           </div>
-       
         <% end %>
       </h5>
       <h6 class="card-subtitle ms-4 mb-2 text-muted">
