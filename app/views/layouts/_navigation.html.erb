@@ -45,6 +45,7 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
+            <%= "(admin)" if current_user.admin? %>
             <%= current_user.username %>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">

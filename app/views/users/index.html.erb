@@ -26,6 +26,9 @@
             <% if logged_in? && user == current_user %>
               <%= link_to 'Edit', edit_user_path(user), class: "btn btn-outline-info" %>
             <% end %>
+            <% if logged_in? && current_user.admin? %>
+              <%= link_to 'Delete', user_path(user), class: "btn btn-outline-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
           </span>
         </div>
       </div>
