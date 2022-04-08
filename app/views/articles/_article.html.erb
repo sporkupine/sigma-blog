@@ -1,6 +1,8 @@
+
+<div class="row">
 <% @articles.each do |article| %>
-  <div class="row">
-  <div class="col-8">
+  <div class="col-4">
+
     <div class="card mb-2 shadow rounded" style="background-color: rgb( 251, 251, 215 )">
       <h5 class="card-header mb-2 mt-1">
         <strong><%= article.title %></strong>
@@ -30,6 +32,7 @@
       </span>
 
     </div>
-  </div>
+
   </div>
 <% end %>
+</div>
